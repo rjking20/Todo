@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="center-column">
+<form method="post" action="/">
+    {% csrf_token%}
+    {{form.title}}
+    <input class="btn btn-info" type="submit" name="createTask" value="Add">
+</form>
+
+
+{% for task in tasks %}
+
+    <div class="item-row">
+        <a class="btn btn-sm btn-info" href="{% url 'update' task.id %}">Update</a>
+        <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a>
+        {% if task.complete == True %}
+        <strike style="position:relative;left:20px;">{{task}}</strike>
+        {% else %}
+        <span style="position:relative;left:20px;">{{task}}</span>
+        {% endif %}
+    </div>
+
+{% endfor %}
+
+{% endblock %}
+</div>

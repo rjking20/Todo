@@ -1,0 +1,91 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+    body{
+        background-image: url("{% static 'images/background.jpg' %}");
+        background-repeat : no-repeat;
+        background-size: cover;
+    }
+
+    input {
+        width : 100%;
+        padding : 12px 20px;
+        margin : 8px 0;
+        box-sizing : border-box;
+    }
+    input::placeholder{
+        color: #d3d3d3;
+    }
+    input[type=checkbox]{
+        visibility:hidden;
+    }
+    .checkBox{
+        width:55px;
+        height:20px;
+        background:#130f40;
+
+        margin:20px 10px;
+        position:relative;
+        bottom:50px;
+        left:100px;
+        border-radius : 10px;
+
+    }
+    .checkBox label{
+        display:block;
+        width:20px;
+        height:20px;
+        border-radius:50%;
+        transition: all .5s ease;
+        cursor:pointer;
+        position:absolute;
+        top:-0px;
+        left: -3px;
+        background:#7ed6df;
+
+    }
+    .checkBox input[type=checkbox]:checked + label{
+        left:35px;
+    }
+    .submit {
+        background-color : #6BA3EB;
+    }
+    .center-column {
+        width: 600px;
+        margin : 20px auto;
+        padding : 20px;
+        background-color : #fff;
+        border-radius: 3px;
+        box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+    }
+    .item-row{
+
+        font-size : 16px;
+        margin : 10px;
+        padding : 20px;
+        background-color : #30336b;
+        color: #fff;
+        border-radius: 3px;
+        box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+
+    }
+
+    .btn-danger{
+        background-color: #ffae19;
+        border-color: #e59400;
+    }
+</style>
+</head>
+<body>
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>

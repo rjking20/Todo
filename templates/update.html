@@ -1,0 +1,21 @@
+{%extends 'base.html' %}
+{% block content %}
+<div class="center-column">
+<h1>Update Task</h1>
+
+
+<form method="post" action="">{% csrf_token %}
+    <div>
+        <label for="id_title">Title</label>
+        {{form.title}}
+    </div><br><br>
+    <label>Complete</label>
+    <div class="checkBox">
+         {{form.complete}}
+         <label for="id_complete"></label>
+    </div>
+    <input class="btn btn-info" type="submit" name="updateTask" value="Update">
+</form>
+
+</div>
+{% endblock %}
